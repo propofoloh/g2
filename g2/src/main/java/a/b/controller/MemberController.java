@@ -77,7 +77,7 @@ public class MemberController {
 		}
 		
 		
-		return "redirect:/";
+		return "redirect:/board/list2";
 	}
 	
 	// 로그아웃 post

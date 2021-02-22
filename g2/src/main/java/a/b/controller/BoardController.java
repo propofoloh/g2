@@ -72,6 +72,23 @@ public class BoardController {
 		
 	}
 	
+	// 게시판 목록 조회
+	@RequestMapping(value = "/list2", method = RequestMethod.GET)
+	public String list2(Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
+		logger.info("list2");
+		
+		model.addAttribute("list2", service.list(scri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(scri);
+		pageMaker.setTotalCount(service.listCount(scri));
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "board/list2";
+		
+	}
+	
 	// 게시판 조회
 	@RequestMapping(value = "/readView", method = RequestMethod.GET)
 	public String read(BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception {

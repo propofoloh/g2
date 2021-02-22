@@ -17,7 +17,7 @@
 
 </head>
 <br />
-<script type="text/javascript">
+<%--<script type="text/javascript">
 	$(document).ready(function(){
 		$("#logoutBtn").on("click", function(){
 			location.href="member/logout";
@@ -126,7 +126,8 @@
 </body>
 
 </html>
-<%-- 원본소스 
+--%>
+ 
 <body>
 	<form name='homeForm' method="post" action="/member/login">
 		<c:if test="${member == null}">
@@ -140,7 +141,7 @@
 			</div>
 			<div>
 				<button type="submit">로그인</button>
-				<button id="registerBtn" type="button">회원가입</button>
+				<button id="registerBtn" type="button"  onclick="location.href='/member/register'">회원가입</button>
 			</div>
 		</c:if>
 		<c:if test="${member != null }">
@@ -155,5 +156,5 @@
 			<p style="color: red;">로그인 실패! 아이디와 비밀번호 확인해주세요.</p>
 		</c:if>
 	</form>
-</body> --%>
+</body>
 </html>
