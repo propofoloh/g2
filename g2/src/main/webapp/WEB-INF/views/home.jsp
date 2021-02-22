@@ -12,8 +12,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <br />
@@ -23,7 +22,7 @@
 			location.href="member/logout";
 		})
 		$("#registerBtn").on("click", function(){
-			location.href="member/register";
+			location.href="member/Agreement";
 		})
 		$("#memberDeleteBtn").on("click", function(){
 			location.href="member/memberDeleteView";
@@ -90,13 +89,13 @@
 
 			<div class="jumbotron" styles="padding-top:20px;">
 
-				<form method="post" action="loginAction.jsp">
+				<form method="post" action="member/register">
 
 					<h3 style="text-align: center;">로그인화면</h3>
 
 					<div class="form-group">
 
-						<input type="text" class="form-control" placeholder="야이디"
+						<input type="text" class="form-control" placeholder="아이디"
 							name="userID" maxlength="20">
 
 					</div>
@@ -107,12 +106,13 @@
 							name="userPassword" maxlength="20">
 
 					</div>
-
-					<input type="submit" class="btn btn-primary form-control"
-						value="로그인">
+					<input style="width: 100%" type="submit" class="btn btn-primary form-control"value="로그인">	
 
 				</form>
-
+				<div style=" width: 230px; float: left">
+					<input id="registerBtn" style="width: 49%" type="submit" class="btn btn-primary form-control" value="회원가입"> 
+					<input style="width: 49%" type="button" class="btn btn-primary form-control" value="ID/PW 찾기">
+				</div>
 			</div>
 
 		</div>
