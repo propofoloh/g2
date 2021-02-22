@@ -61,29 +61,62 @@
 		}
 	</script>
 	<body>
+
+	
+	
+	<div class="content" style="margin-top : 200px; margin-left: 30%; margin-right: 300px; ">
 		<section id="container">
-			<form action="/member/register" method="post" id="regForm">
-				<div class="form-group has-feedback">
-					<label class="control-label" for="userId">아이디</label>
-					<input class="form-control" type="text" id="userId" name="userId" />
-					<button class="idChk" type="button" id="idChk" onclick="fn_idChk();" value="N">중복확인</button>
+			<form action="/member/register" method="post" id="regForm" >
+				<div class="form-group ">
+					<label class="control-label" for="userId">아이디</label><br>
+					<input class="form-control" style="width : 45%; height : 6%; float:left;"  type="text" id="userId" name="userId" />
+					<button class="btn btn-primary form-control" style=" margin-left: 10px; width :10%; height: 6%" type="button" id="idChk" onclick="fn_idChk();" value="중복확인">중복확인</button>
 				</div>
 				<div class="form-group has-feedback">
-					<label class="control-label" for="userPass">패스워드</label>
-					<input class="form-control" type="password" id="userPass" name="userPass" />
+					<label class="control-label" for="userPass">비밀번호</label>
+					<input class="form-control"  style="width : 45%; height : 6%;" type="password" id="userPass" name="userPass" />
 				</div>
+				
 				<div class="form-group has-feedback">
-					<label class="control-label" for="userName">성명</label>
-					<input class="form-control" type="text" id="userName" name="userName" />
+					<label class="control-label" for="userPass">비밀번호 재확인</label>
+					<input class="form-control" style="width : 45%; height : 6%;" type="password" id="userPasscheck" name="userPasscheck" />
+				</div>
+				
+				<div class="form-group has-feedback">
+					<label class="control-label" for="userName">이름</label>
+					<input class="form-control" style="width : 45%; height : 6%;" type="text" id="userName" name="userName" />
+				</div>
+				
+				<div class="form-group has-feedback">
+					<label class="control-label" for="userName">생년월일</label><br>
+					<input class="form-control" style="margin-right : 5px; float:left; width : 15%; height : 6%;" type="text" id="year" name="year" placeholder="년(4자리)" />
+					<select class="form-control" style="margin-right : 5px; float:left; width : 15%; height : 6%;" type="text" id="month" name="month">
+						<option value="year"> 1월</option>
+						<option value="year"> 2월</option>
+						<option value="year"> 3월</option>
+						<option value="year"> 4월</option>
+						<option value="year"> 5월</option>
+						<option value="year"> 6월</option>
+						<option value="year"> 7월</option>
+						<option value="year"> 8월</option>
+						<option value="year"> 9월</option>
+						<option value="year"> 10월</option>
+						<option value="year"> 11월</option>
+						<option value="year"> 12월</option></select>
+					<input class="form-control" style=" width : 14%; height : 6%;" type="text" id="day" name="day" placeholder="일" />
+				</div>
+
+				<div class="form-group has-feedback">
+					<label class="control-label" for="userName">휴대폰 번호</label>
+					<input class="form-control" style="width : 45%; height : 6%;" type="text" id="userPhone" name="userPhone" placeholder="전화번호 입력" />
 				</div>
 				
 			</form>
 				<div class="form-group has-feedback">
-					<button class="btn btn-success" type="button" id="submit">회원가입</button>
-					<button class="cencle btn btn-danger" type="button">취소</button>
+					<button class="btn btn-success" style="width : 45%; height : 6%; type="button" id="submit">회원가입</button>
 				</div>
 		</section>
-		
+		</div>
 	</body>
 	
 </html>
