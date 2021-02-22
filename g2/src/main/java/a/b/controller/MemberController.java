@@ -31,13 +31,13 @@ public class MemberController {
 	@Inject
 	BCryptPasswordEncoder pwdEncoder;
 	
-	// 회원가입 get
+	// �쉶�썝媛��엯 get
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void getRegister() throws Exception {
 		logger.info("get register");
 	}
 	
-	// 회원가입 post
+	// �쉶�썝媛��엯 post
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String postRegister(MemberVO vo) throws Exception {
 		logger.info("post register");
@@ -52,15 +52,15 @@ public class MemberController {
 				
 				service.register(vo);
 			}
-			// 요기에서~ 입력된 아이디가 존재한다면 -> 다시 회원가입 페이지로 돌아가기 
-			// 존재하지 않는다면 -> register
+			// �슂湲곗뿉�꽌~ �엯�젰�맂 �븘�씠�뵒媛� 議댁옱�븳�떎硫� -> �떎�떆 �쉶�썝媛��엯 �럹�씠吏�濡� �룎�븘媛�湲� 
+			// 議댁옱�븯吏� �븡�뒗�떎硫� -> register
 		} catch (Exception e) {
 			throw new RuntimeException();
 		}
 		return "redirect:/";
 	}
 	
-	// 로그인 post
+	// 濡쒓렇�씤 post
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(MemberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
 		logger.info("post login");
@@ -80,7 +80,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	// 로그아웃 post
+	// 濡쒓렇�븘�썐 post
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws Exception{
 		
@@ -89,13 +89,13 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	// 회원정보 수정 get
+	// �쉶�썝�젙蹂� �닔�젙 get
 	@RequestMapping(value="/memberUpdateView", method = RequestMethod.GET)
 	public String registerUpdateView() throws Exception{
 		return "member/memberUpdateView";
 	}
 	
-	// 회원정보 수정  post
+	// �쉶�썝�젙蹂� �닔�젙  post
 	@RequestMapping(value="/memberUpdate", method = RequestMethod.POST)
 	public String registerUpdate(MemberVO vo, HttpSession session) throws Exception{
 		
@@ -113,13 +113,13 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	// 회원 탈퇴 get
+	// �쉶�썝 �깉�눜 get
 	@RequestMapping(value="/memberDeleteView", method = RequestMethod.GET)
 	public String memberDeleteView() throws Exception{
 		return "member/memberDeleteView";
 	}
 	
-	// 회원 탈퇴 post
+	// �쉶�썝 �깉�눜 post
 	@RequestMapping(value="/memberDelete", method = RequestMethod.POST)
 	public String memberDelete(MemberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
 		
@@ -129,7 +129,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	// 패스워드 체크
+	// �뙣�뒪�썙�뱶 泥댄겕
 	@ResponseBody
 	@RequestMapping(value="/passChk", method = RequestMethod.POST)
 	public boolean passChk(MemberVO vo) throws Exception {
@@ -139,12 +139,17 @@ public class MemberController {
 		return pwdChk;
 	}
 	
-	// 아이디 중복 체크
+	// �븘�씠�뵒 以묐났 泥댄겕
 	@ResponseBody
 	@RequestMapping(value="/idChk", method = RequestMethod.POST)
 	public int idChk(MemberVO vo) throws Exception {
 		int result = service.idChk(vo);
 		return result;
+	}
+	@RequestMapping(value="/Agreement", method = RequestMethod.GET)
+	public String Agreement(MemberVO vo, HttpSession session) throws Exception{
+		
+		return "member/Agreement";
 	}
 }
 
