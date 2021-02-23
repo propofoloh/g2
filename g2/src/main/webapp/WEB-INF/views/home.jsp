@@ -72,7 +72,7 @@
 
 						<li class="active"><a href="login.jsp">로그인</a></li>
 
-						<li><a href="join.jsp">회원가입22</a></li>
+						<li><a href="join.jsp">회원가입1</a></li>
 
 					</ul></li>
 			</ul>
