@@ -106,10 +106,10 @@
 							name="userPassword" maxlength="20">
 
 					</div>
-					<input style="width: 100%" type="submit" class="btn btn-primary form-control"value="로그인">	
+					<input style="width: 100%;" type="submit" class="btn btn-primary form-control"value="로그인">	
 
 				</form>
-				<div style=" width: 230px; float: left">
+				<div style=" width: 100%; float: left">
 					<input id="registerBtn" style="width: 49%" type="submit" class="btn btn-primary form-control" value="회원가입"> 
 					<input style="width: 49%" type="button" class="btn btn-primary form-control" value="ID/PW 찾기">
 				</div>
